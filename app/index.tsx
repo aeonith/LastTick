@@ -2,16 +2,23 @@ import React, { useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { hasCompletedOnboarding } from '../src/lib/storage';
+import { isLoggedIn } from '../src/lib/auth';
 
 export default function Index() {
   const router = useRouter();
 
   useEffect(() => {
-    checkOnboarding();
+    checkAuth();
   }, []);
 
-  async function checkOnboarding() {
-    // NO LOGIN REQUIRED - just check onboarding
+  async function checkAuth() {
+    const loggedIn = await isLoggedIn();
+    
+    if (!loggedIn) {
+      router.replace('/login');
+      return;
+    }
+
     const completed = await hasCompletedOnboarding();
     
     if (completed) {

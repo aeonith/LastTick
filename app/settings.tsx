@@ -22,7 +22,7 @@ import {
   loadNotificationTime,
   saveNotificationTime,
 } from '../src/lib/storage';
-
+import { logout } from '../src/lib/auth';
 import { getThemeColors } from '../src/lib/theme';
 import { requestNotificationPermissions, scheduleDailyNotification, cancelAllNotifications } from '../src/lib/notifications';
 import Button from '../src/components/Button';
@@ -94,6 +94,25 @@ export default function Settings() {
           onPress: async () => {
             await clearAllData();
             router.replace('/onboarding');
+          },
+        },
+      ]
+    );
+  };
+
+  const handleLogout = () => {
+    Alert.alert(
+      'Log Out',
+      'Are you sure you want to log out?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Log Out',
+          style: 'destructive',
+          onPress: async () => {
+            await logout();
+            await clearAllData();
+            router.replace('/login');
           },
         },
       ]
@@ -217,7 +236,14 @@ export default function Settings() {
 
         <View style={styles.dangerZone}>
           <Button
-            title="Reset App"
+            title="Log Out"
+            onPress={handleLogout}
+            colors={{ ...colors, accent: colors.error }}
+            variant="outline"
+          />
+          <View style={{ height: 12 }} />
+          <Button
+            title="Reset App Data"
             onPress={handleResetApp}
             colors={{ ...colors, accent: colors.error }}
             variant="outline"
