@@ -1,7 +1,7 @@
-# Momentus - Agent Context File
+# LastTick - Agent Context File
 
 ## Project Overview
-Momentus is a philosophical time awareness app built with React Native (Expo) and TypeScript. It provides users with an estimated life expectancy countdown based on health factors and optional numerology/astrology inputs.
+LastTick is a philosophical time awareness app built with React Native (Expo) and TypeScript. It provides users with an estimated life expectancy countdown based on health factors and optional numerology/astrology inputs.
 
 ## Key Commands
 

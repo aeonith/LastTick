@@ -43,7 +43,7 @@
 
 ## ✅ Branding Updated
 
-### 8. **Momentus → LastTick**
+### 8. **LastTick → LastTick**
 - Updated all references throughout the app:
   - App name in `app.json`
   - Bundle IDs (`com.yourcompany.lasttick`)

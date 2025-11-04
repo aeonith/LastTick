@@ -1,7 +1,7 @@
-# App Store Metadata for Momentus
+# App Store Metadata for LastTick
 
 ## App Name
-Momentus - Time Awareness
+LastTick - Time Awareness
 
 ## Subtitle (30 characters)
 Philosophical time reflection
@@ -11,9 +11,9 @@ time,awareness,philosophy,stoic,memento mori,life,mindfulness,reflection,countdo
 
 ## Description
 
-Momentus is a philosophical tool for time awareness and existential reflection.
+LastTick is a philosophical tool for time awareness and existential reflection.
 
-Ever wonder how much time you truly have? Momentus provides an estimated countdown of your remaining life—not to create fear, but to inspire presence, intention, and gratitude for each moment.
+Ever wonder how much time you truly have? LastTick provides an estimated countdown of your remaining life—not to create fear, but to inspire presence, intention, and gratitude for each moment.
 
 **Features:**
 • Personalized life expectancy estimate based on health factors
@@ -27,7 +27,7 @@ Ever wonder how much time you truly have? Momentus provides an estimated countdo
 • No ads, no tracking, no data collection
 
 **Philosophy:**
-Inspired by Stoic wisdom and the ancient practice of "Memento Mori" (remember you must die), Momentus helps you:
+Inspired by Stoic wisdom and the ancient practice of "Memento Mori" (remember you must die), LastTick helps you:
 - Live with greater intention
 - Appreciate the present moment
 - Prioritize what truly matters
@@ -46,7 +46,7 @@ All your data is stored locally on your device only. We never collect, transmit,
 - Anyone seeking more intentional living
 - Those interested in existential reflection
 
-Make each moment count. Download Momentus today.
+Make each moment count. Download LastTick today.
 
 ---
 
@@ -56,13 +56,13 @@ Remember you must die—so you may truly live. A philosophical countdown that in
 ---
 
 ## Support URL
-https://yourwebsite.com/momentus/support
+https://yourwebsite.com/lasttick/support
 
 ## Marketing URL
-https://yourwebsite.com/momentus
+https://yourwebsite.com/lasttick
 
 ## Privacy Policy URL
-https://yourwebsite.com/momentus/privacy
+https://yourwebsite.com/lasttick/privacy
 
 ---
 
@@ -81,10 +81,10 @@ Secondary: Lifestyle
 
 **To the App Review Team:**
 
-Thank you for reviewing Momentus.
+Thank you for reviewing LastTick.
 
 **What this app does:**
-Momentus is a philosophical reflection tool that provides users with an illustrative estimate of their remaining life expectancy. The purpose is to encourage mindfulness and intentional living, inspired by Stoic philosophy and the practice of "Memento Mori."
+LastTick is a philosophical reflection tool that provides users with an illustrative estimate of their remaining life expectancy. The purpose is to encourage mindfulness and intentional living, inspired by Stoic philosophy and the practice of "Memento Mori."
 
 **How it works:**
 1. Users input basic health information (smoking, exercise, sleep, diet, stress levels)

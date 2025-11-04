@@ -4,7 +4,7 @@
 
 ✅ **Complete LastTick app** - philosophical time awareness countdown  
 ✅ **All critical bugs fixed** - countdown updates, date picker works, proper error handling  
-✅ **Full branding** - Changed from Momentus to LastTick throughout  
+✅ **Full branding** - Changed from LastTick to LastTick throughout  
 ✅ **60+ philosophical quotes** - Stoic, realistic, and soft tones  
 ✅ **3 beautiful themes** - Light, Dark, and Void (high contrast)  
 ✅ **In-app purchases** - Ready for App Store (needs product setup)  

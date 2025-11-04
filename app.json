@@ -25,15 +25,7 @@
       },
       "usesAppleHealthKit": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
-      },
-      "package": "com.yourcompany.lasttick",
-      "versionCode": 1,
-      "permissions": []
-    },
+
     "plugins": [
       "expo-router",
       "expo-secure-store",

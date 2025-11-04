@@ -1,8 +1,8 @@
-# Momentus - Time Awareness App
+# LastTick - Time Awareness App
 
 > A philosophical reflection tool for time awareness. Not medical advice—just mindful living.
 
-Momentus provides an estimated countdown of your remaining life based on health factors and optional numerology/astrology inputs. Inspired by Stoic philosophy and the practice of "Memento Mori" (remember you must die), this app helps you live with greater intention and presence.
+LastTick provides an estimated countdown of your remaining life based on health factors and optional numerology/astrology inputs. Inspired by Stoic philosophy and the practice of "Memento Mori" (remember you must die), this app helps you live with greater intention and presence.
 
 ---
 
@@ -103,7 +103,7 @@ LastTick/
 
 #### `app.json`
 Update these values before building:
-- `expo.ios.bundleIdentifier`: Your iOS bundle ID (e.g., `com.yourcompany.momentus`)
+- `expo.ios.bundleIdentifier`: Your iOS bundle ID (e.g., `com.yourcompany.lasttick`)
 - `expo.android.package`: Your Android package name (must match iOS for IAP)
 - `expo.extra.eas.projectId`: Your EAS project ID (get from `eas init`)
 
@@ -122,7 +122,7 @@ const HEALTH_WEIGHTS = {
 Configure product IDs and monetization mode:
 ```typescript
 export const PRODUCT_IDS = {
-  LIFETIME: 'com.yourcompany.momentus.lifetime',
+  LIFETIME: 'com.yourcompany.lasttick.lifetime',
 };
 export const TRIAL_DAYS = 14;
 ```
@@ -148,13 +148,13 @@ eas init
 1. **Create App in App Store Connect**
    - Go to https://appstoreconnect.apple.com
    - Click "+" → "New App"
-   - Bundle ID: `com.yourcompany.momentus` (must match app.json)
-   - Name: "Momentus"
+   - Bundle ID: `com.yourcompany.lasttick` (must match app.json)
+   - Name: "LastTick"
 
 2. **Create In-App Purchase**
    - Go to your app → Features → In-App Purchases
    - Click "+" → Non-Consumable
-   - Product ID: `com.yourcompany.momentus.lifetime`
+   - Product ID: `com.yourcompany.lasttick.lifetime`
    - Reference Name: "Lifetime Access"
    - Set pricing tier (e.g., $4.99)
    - Add localizations
@@ -180,12 +180,12 @@ eas init
 1. **Create App in Google Play Console**
    - Go to https://play.google.com/console
    - Create app → Fill in details
-   - Package name: `com.yourcompany.momentus` (must match iOS)
+   - Package name: `com.yourcompany.lasttick` (must match iOS)
 
 2. **Create In-App Product**
    - Monetize → Products → In-app products
    - Create product
-   - Product ID: `com.yourcompany.momentus.lifetime` (match iOS)
+   - Product ID: `com.yourcompany.lasttick.lifetime` (match iOS)
    - Type: One-time
    - Set pricing
 
@@ -413,7 +413,7 @@ MIT License - see LICENSE file
 
 For questions, issues, or feedback:
 - **Email**: support@yourcompany.com
-- **Website**: https://yourwebsite.com/momentus
+- **Website**: https://yourwebsite.com/lasttick
 
 ---
 

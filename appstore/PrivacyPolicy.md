@@ -1,16 +1,16 @@
-# Privacy Policy for Momentus
+# Privacy Policy for LastTick
 
 **Effective Date:** [Insert Date]
 
 ## Introduction
 
-Thank you for using Momentus ("the App"). Your privacy is important to us. This Privacy Policy explains how we handle your data.
+Thank you for using LastTick ("the App"). Your privacy is important to us. This Privacy Policy explains how we handle your data.
 
 ## Data Collection
 
 **We do NOT collect any personal data.**
 
-All information you provide to Momentus is stored locally on your device only. We have no servers, databases, or infrastructure to collect or store your data.
+All information you provide to LastTick is stored locally on your device only. We have no servers, databases, or infrastructure to collect or store your data.
 
 ## Data Storage
 
@@ -63,7 +63,7 @@ We take security seriously:
 
 ## Children's Privacy
 
-Momentus does not knowingly collect data from children under 13. The app is rated 4+ and suitable for all ages, but we recommend parental guidance for younger users due to the philosophical themes around mortality.
+LastTick does not knowingly collect data from children under 13. The app is rated 4+ and suitable for all ages, but we recommend parental guidance for younger users due to the philosophical themes around mortality.
 
 ## Changes to This Policy
 
@@ -74,12 +74,12 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 If you have questions about this Privacy Policy, please contact us:
 
 **Email:** support@yourcompany.com  
-**Website:** https://yourwebsite.com/momentus/privacy
+**Website:** https://yourwebsite.com/lasttick/privacy
 
 ## Disclaimer
 
-Momentus is a philosophical reflection tool and is NOT medical advice. Life expectancy estimates are illustrative only and should not be relied upon for medical, financial, or legal decisions.
+LastTick is a philosophical reflection tool and is NOT medical advice. Life expectancy estimates are illustrative only and should not be relied upon for medical, financial, or legal decisions.
 
 ---
 
-**Your privacy matters. Momentus is built with privacy-first principles: your data stays on your device, always.**
+**Your privacy matters. LastTick is built with privacy-first principles: your data stays on your device, always.**

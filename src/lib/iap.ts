@@ -5,13 +5,13 @@
  * 1. Apple App Store Connect:
  *    - Create In-App Purchase product
  *    - Type: Non-Consumable (one-time purchase)
- *    - Product ID: com.yourcompany.momentus.lifetime
+ *    - Product ID: com.yourcompany.lasttick.lifetime
  *    - Add pricing tiers
  *    - Submit for review with app
  * 
  * 2. Google Play Console:
  *    - Create In-App Product
- *    - Product ID: com.yourcompany.momentus.lifetime (match Apple)
+ *    - Product ID: com.yourcompany.lasttick.lifetime (match Apple)
  *    - Type: One-time purchase
  *    - Set pricing
  * 
