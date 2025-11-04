@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Animated,
+  ImageBackground,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { 
@@ -105,7 +106,14 @@ export default function Dashboard() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <AnimatedHourglass opacity={0.05} />
+      <ImageBackground
+        source={require('../assets/gothic-clock.jpeg')}
+        style={styles.backgroundImage}
+        imageStyle={styles.backgroundImageStyle}
+        blurRadius={8}
+      >
+        <View style={styles.overlay} />
+      </ImageBackground>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Animated.View style={[styles.header, { opacity: fadeAnim }]}>
           <Text style={[styles.headerTitle, { color: colors.textSecondary }]}>
@@ -212,6 +220,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  backgroundImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  backgroundImageStyle: {
+    opacity: 0.15,
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(10, 20, 25, 0.7)',
+  },
   scrollContent: {
     padding: 20,
     paddingTop: 60,
@@ -223,8 +243,9 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: '600',
-    letterSpacing: 2,
+    letterSpacing: 4,
     textTransform: 'uppercase',
+    fontFamily: 'Georgia',
   },
   ringContainer: {
     alignItems: 'center',
@@ -239,10 +260,16 @@ const styles = StyleSheet.create({
   percentText: {
     fontSize: 48,
     fontWeight: 'bold',
+    fontFamily: 'Georgia',
+    textShadowColor: 'rgba(107, 157, 181, 0.5)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 12,
   },
   percentLabel: {
     fontSize: 14,
     marginTop: 4,
+    fontFamily: 'Georgia',
+    letterSpacing: 2,
   },
   countdownGrid: {
     flexDirection: 'row',
@@ -253,27 +280,32 @@ const styles = StyleSheet.create({
   countdownItem: {
     width: '31%',
     padding: 16,
-    borderRadius: 16,
-    borderWidth: 2,
+    borderRadius: 12,
+    borderWidth: 1,
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 8,
   },
   countdownValue: {
     fontSize: 36,
     fontWeight: '800',
     letterSpacing: -1,
+    fontFamily: 'Courier New',
+    textShadowColor: 'rgba(107, 157, 181, 0.4)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 8,
   },
   countdownLabel: {
     fontSize: 11,
     marginTop: 6,
     fontWeight: '600',
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
-    opacity: 0.7,
+    letterSpacing: 2,
+    opacity: 0.8,
+    fontFamily: 'Georgia',
   },
   actionButtons: {
     flexDirection: 'row',

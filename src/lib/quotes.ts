@@ -12,6 +12,16 @@ export interface Quote {
 }
 
 export const QUOTES: Quote[] = [
+  // Eerie & Gothic
+  { text: "The clock ticks. Each second, a whisper of eternity passing.", tones: ['philosophical', 'realistic'] },
+  { text: "Time is the fire in which we burn.", author: "Delmore Schwartz", tones: ['realistic', 'philosophical'] },
+  { text: "Every tick is a step towards the inevitable. Make each one count.", tones: ['realistic'] },
+  { text: "The shadow grows longer as the day fades.", tones: ['philosophical'] },
+  { text: "In the end, we all become stories. Make yours worth telling.", tones: ['philosophical'] },
+  { text: "The hourglass empties grain by grain, whether you notice or not.", tones: ['realistic', 'philosophical'] },
+  { text: "We are but dust and shadow.", author: "Horace", tones: ['philosophical'] },
+  { text: "Time is a ghost that haunts us all.", tones: ['philosophical'] },
+  
   // Soft & Gentle
   { text: "Every moment is a fresh beginning.", author: "T.S. Eliot", tones: ['soft', 'philosophical'] },
   { text: "The present moment is filled with joy and happiness.", author: "Thích Nhất Hạnh", tones: ['soft'] },
