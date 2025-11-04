@@ -18,8 +18,12 @@
       "buildNumber": "1",
       "infoPlist": {
         "NSUserTrackingUsageDescription": "This app does not track you. This permission is required by the App Store.",
-        "NSPhotoLibraryUsageDescription": "Save snapshots of your time reflection to your photo library."
-      }
+        "NSPhotoLibraryUsageDescription": "Save snapshots of your time reflection to your photo library.",
+        "NSHealthShareUsageDescription": "LastTick uses your health data to provide a more accurate life expectancy estimate based on your actual heart rate, sleep, activity, and wellness metrics. All data stays on your device and is never transmitted to servers.",
+        "NSHealthUpdateUsageDescription": "LastTick does not write any health data.",
+        "NSHealthClinicalHealthRecordsShareUsageDescription": "LastTick does not access clinical health records."
+      },
+      "usesAppleHealthKit": true
     },
     "android": {
       "adaptiveIcon": {
@@ -38,6 +42,12 @@
         {
           "icon": "./assets/notification-icon.png",
           "color": "#ffffff"
+        }
+      ],
+      [
+        "react-native-health",
+        {
+          "isAppExtension": false
         }
       ]
     ],

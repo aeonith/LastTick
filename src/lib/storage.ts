@@ -15,6 +15,8 @@ const KEYS = {
   NOTIFICATION_TIME: 'lasttick_notification_time',
   INSTALL_DATE: 'lasttick_install_date',
   HAS_PURCHASED: 'lasttick_has_purchased',
+  HEALTH_METRICS: 'lasttick_health_metrics',
+  HEALTH_ENABLED: 'lasttick_health_enabled',
 };
 
 export type Theme = 'light' | 'dark' | 'void';
@@ -138,15 +140,62 @@ export async function hasPurchased(): Promise<boolean> {
 }
 
 /**
+ * Health metrics storage
+ */
+export async function saveHealthMetrics(metrics: any): Promise<void> {
+  try {
+    const jsonData = JSON.stringify({
+      ...metrics,
+      timestamps: metrics.timestamps.map((t: Date) => t.toISOString()),
+      lastUpdated: metrics.lastUpdated.toISOString(),
+    });
+    await SecureStore.setItemAsync(KEYS.HEALTH_METRICS, jsonData);
+  } catch (error) {
+    console.error('Failed to save health metrics:', error);
+  }
+}
+
+export async function loadHealthMetrics(): Promise<any | null> {
+  try {
+    const jsonData = await SecureStore.getItemAsync(KEYS.HEALTH_METRICS);
+    if (!jsonData) return null;
+
+    const parsed = JSON.parse(jsonData);
+    return {
+      ...parsed,
+      timestamps: parsed.timestamps.map((t: string) => new Date(t)),
+      lastUpdated: new Date(parsed.lastUpdated),
+    };
+  } catch (error) {
+    console.error('Failed to load health metrics:', error);
+    return null;
+  }
+}
+
+/**
+ * Health tracking enabled/disabled
+ */
+export async function setHealthTrackingEnabled(enabled: boolean): Promise<void> {
+  await AsyncStorage.setItem(KEYS.HEALTH_ENABLED, enabled.toString());
+}
+
+export async function isHealthTrackingEnabled(): Promise<boolean> {
+  const value = await AsyncStorage.getItem(KEYS.HEALTH_ENABLED);
+  return value === 'true';
+}
+
+/**
  * Clear all data (for testing or account reset)
  */
 export async function clearAllData(): Promise<void> {
   await SecureStore.deleteItemAsync(KEYS.USER_DATA);
+  await SecureStore.deleteItemAsync(KEYS.HEALTH_METRICS);
   await AsyncStorage.multiRemove([
     KEYS.THEME,
     KEYS.TONE,
     KEYS.HAS_COMPLETED_ONBOARDING,
     KEYS.NOTIFICATION_TIME,
     KEYS.HAS_PURCHASED,
+    KEYS.HEALTH_ENABLED,
   ]);
 }

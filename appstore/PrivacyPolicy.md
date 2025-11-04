@@ -20,6 +20,7 @@ The following data is stored **locally on your device**:
 - Optional belief inputs (numerology/astrology preferences, birth time, birth place)
 - App preferences (theme, tone, notification settings)
 - Purchase status (via Apple's or Google's payment system)
+- **Health data from Apple Health (optional):** If you enable health tracking, the app accesses your HealthKit data including heart rate, sleep analysis, blood oxygen, steps, active energy, and mindfulness sessions. This data is only read from your device and used to calculate a more accurate life expectancy estimate. It is never transmitted to servers.
 
 This data is stored using:
 - **iOS:** Secure Store and AsyncStorage
@@ -39,6 +40,7 @@ Your data never leaves your device. We do not:
 
 The App uses:
 - **Apple App Store / Google Play Store:** For in-app purchases (handled by Apple/Google, subject to their privacy policies)
+- **Apple HealthKit (optional):** If you enable health tracking, the app accesses your HealthKit data to provide dynamic life expectancy estimates. HealthKit data is read-only and never leaves your device.
 - **Local device storage:** No external services
 
 We do not integrate any third-party analytics, advertising, or tracking SDKs.
@@ -46,9 +48,11 @@ We do not integrate any third-party analytics, advertising, or tracking SDKs.
 ## User Rights
 
 You can:
-- **Access your data:** All data is visible in the App's Settings
+- **Access your data:** All data is visible in the App's Settings and Health Dashboard
 - **Modify your data:** Edit health inputs and preferences anytime
+- **Disable health tracking:** Turn off health tracking at any time in Settings
 - **Delete your data:** Use "Reset App" in Settings to permanently delete all local data
+- **Manage HealthKit permissions:** You can revoke HealthKit access anytime in iOS Settings > Health > Data Access & Devices
 
 ## Data Security
 

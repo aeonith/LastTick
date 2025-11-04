@@ -8,8 +8,15 @@ import {
   Animated,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import { loadUserData, loadTheme, loadTone } from '../src/lib/storage';
+import { 
+  loadUserData, 
+  loadTheme, 
+  loadTone,
+  loadHealthMetrics,
+  isHealthTrackingEnabled 
+} from '../src/lib/storage';
 import { calculateTimeRemaining, UserData } from '../src/lib/estimate';
+import { calculateHealthBasedAdjustment } from '../src/lib/healthkit';
 import { getThemeColors } from '../src/lib/theme';
 import { getQuoteOfDay } from '../src/lib/quotes';
 import RingProgress from '../src/components/RingProgress';
@@ -25,6 +32,7 @@ export default function Dashboard() {
   const [tone, setTone] = useState<'soft' | 'realistic' | 'philosophical'>('philosophical');
   const [colors, setColors] = useState(getThemeColors('dark'));
   const [quote, setQuote] = useState(getQuoteOfDay('philosophical'));
+  const [healthAdjustment, setHealthAdjustment] = useState<number | undefined>(undefined);
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -42,11 +50,11 @@ export default function Dashboard() {
     if (!userData) return;
     
     const interval = setInterval(() => {
-      setTimeRemaining(calculateTimeRemaining(userData));
+      setTimeRemaining(calculateTimeRemaining(userData, healthAdjustment));
     }, 1000);
     
     return () => clearInterval(interval);
-  }, [userData]);
+  }, [userData, healthAdjustment]);
 
   const loadData = async () => {
     try {
@@ -59,12 +67,23 @@ export default function Dashboard() {
         return;
       }
 
+      const healthEnabled = await isHealthTrackingEnabled();
+      let adjustment: number | undefined = undefined;
+      
+      if (healthEnabled) {
+        const metrics = await loadHealthMetrics();
+        if (metrics) {
+          adjustment = calculateHealthBasedAdjustment(metrics);
+        }
+      }
+
       setUserData(data);
       setTheme(currentTheme);
       setTone(currentTone);
       setColors(getThemeColors(currentTheme));
       setQuote(getQuoteOfDay(currentTone));
-      setTimeRemaining(calculateTimeRemaining(data));
+      setHealthAdjustment(adjustment);
+      setTimeRemaining(calculateTimeRemaining(data, adjustment));
     } catch (error) {
       console.error('Failed to load dashboard data:', error);
       router.replace('/onboarding');
@@ -148,6 +167,15 @@ export default function Dashboard() {
         </Animated.View>
 
         <View style={styles.actionButtons}>
+          <TouchableOpacity
+            style={[styles.actionButton, { backgroundColor: colors.surface, borderColor: colors.border }]}
+            onPress={() => router.push('/health')}
+          >
+            <Text style={[styles.actionButtonText, { color: colors.text }]}>
+              📊 Health
+            </Text>
+          </TouchableOpacity>
+
           <TouchableOpacity
             style={[styles.actionButton, { backgroundColor: colors.surface, borderColor: colors.border }]}
             onPress={() => router.push('/settings')}

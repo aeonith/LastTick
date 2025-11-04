@@ -108,6 +108,41 @@ See README.md for detailed submission instructions.
 - **Language**: Empathetic, gentle, non-alarmist
 - **Quotes**: Categorized by tone (soft, realistic, philosophical)
 
+## Health Tracking Feature (NEW)
+
+### Overview
+Real-time life expectancy adjustment based on Apple Watch/HealthKit data.
+
+### Commands
+- Enable: Dashboard → 📊 Health button
+- Refresh: Pull-to-refresh on Health screen
+- Disable: Can be disabled in Settings (future)
+
+### Health Metrics Used
+- Heart rate (resting & average)
+- Sleep (hours & quality)
+- Blood oxygen (SpO₂)
+- Steps (daily count)
+- Active energy burned
+- Mindfulness minutes
+
+### Adjustments
+- Good health: +0.5 to +2 years per metric
+- Poor health: -1 to -2 years per metric
+- Max total adjustment: ±8 years
+
+### Privacy
+- All data stays on device
+- Read-only HealthKit access
+- Encrypted local storage
+- Never transmitted to servers
+
+### Files
+- `src/lib/healthkit.ts`: HealthKit integration
+- `app/health.tsx`: Health Dashboard UI
+- `src/lib/estimate.ts`: Updated calculation with health adjustment
+- See HEALTH_TRACKING.md for full documentation
+
 ## Known Limitations / TODOs
 
 - No automated tests (add Jest/Detox later)
@@ -116,6 +151,7 @@ See README.md for detailed submission instructions.
 - No Apple Watch app
 - No localization (English only for MVP)
 - Snapshot/share feature is placeholder (needs implementation)
+- Health tracking settings toggle (add to Settings screen)
 
 ## Contact
 

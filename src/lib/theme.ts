@@ -17,6 +17,8 @@ export interface ThemeColors {
   success: string;
   progressRing: string;
   progressBackground: string;
+  primary: string;
+  cardBg: string;
 }
 
 export const THEMES: Record<Theme, ThemeColors> = {
@@ -32,6 +34,8 @@ export const THEMES: Record<Theme, ThemeColors> = {
     success: '#059669',
     progressRing: '#6366F1',
     progressBackground: '#EEF2FF',
+    primary: '#6366F1',
+    cardBg: '#FFFFFF',
   },
   dark: {
     background: '#000000',
@@ -45,6 +49,8 @@ export const THEMES: Record<Theme, ThemeColors> = {
     success: '#34D399',
     progressRing: '#818CF8',
     progressBackground: '#1E1B4B',
+    primary: '#818CF8',
+    cardBg: '#111111',
   },
   void: {
     background: '#000000',
@@ -58,6 +64,8 @@ export const THEMES: Record<Theme, ThemeColors> = {
     success: '#51CF66',
     progressRing: '#FFFFFF',
     progressBackground: '#18181B',
+    primary: '#F3F4F6',
+    cardBg: '#0A0A0A',
   },
 };
 

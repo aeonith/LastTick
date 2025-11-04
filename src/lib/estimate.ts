@@ -151,8 +151,12 @@ export function getSunSign(birthdate: Date): string {
 
 /**
  * Calculate estimated life expectancy
+ * Optionally includes real-time HealthKit data for dynamic adjustment
  */
-export function calculateLifeExpectancy(userData: UserData): number {
+export function calculateLifeExpectancy(
+  userData: UserData,
+  healthKitAdjustment?: number
+): number {
   let estimate = BASE_LIFE_EXPECTANCY;
 
   // Apply health factors
@@ -198,15 +202,24 @@ export function calculateLifeExpectancy(userData: UserData): number {
     estimate += sunSignAdjustment;
   }
 
+  // Apply real-time HealthKit adjustment if available
+  if (healthKitAdjustment !== undefined) {
+    estimate += healthKitAdjustment;
+  }
+
   // Clamp to reasonable bounds
   return Math.max(MIN_LIFE_EXPECTANCY, Math.min(MAX_LIFE_EXPECTANCY, estimate));
 }
 
 /**
  * Calculate estimated end date
+ * Optionally includes real-time HealthKit data for dynamic adjustment
  */
-export function calculateEstimatedEndDate(userData: UserData): Date {
-  const lifeExpectancy = calculateLifeExpectancy(userData);
+export function calculateEstimatedEndDate(
+  userData: UserData,
+  healthKitAdjustment?: number
+): Date {
+  const lifeExpectancy = calculateLifeExpectancy(userData, healthKitAdjustment);
   const endDate = new Date(userData.birthdate);
   endDate.setFullYear(endDate.getFullYear() + lifeExpectancy);
   return endDate;
@@ -226,9 +239,12 @@ export interface TimeRemaining {
   percentComplete: number;
 }
 
-export function calculateTimeRemaining(userData: UserData): TimeRemaining {
+export function calculateTimeRemaining(
+  userData: UserData,
+  healthKitAdjustment?: number
+): TimeRemaining {
   const now = new Date();
-  const endDate = calculateEstimatedEndDate(userData);
+  const endDate = calculateEstimatedEndDate(userData, healthKitAdjustment);
   const totalLifeMs = endDate.getTime() - userData.birthdate.getTime();
   const elapsedMs = now.getTime() - userData.birthdate.getTime();
   const remainingMs = Math.max(0, endDate.getTime() - now.getTime());
