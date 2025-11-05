@@ -391,7 +391,7 @@ export default function Onboarding() {
   };
 
   return (
-    <GothicBackground opacity={0.12} blur={10}>
+    <GothicBackground opacity={0.3}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {steps[step]()}
       </ScrollView>

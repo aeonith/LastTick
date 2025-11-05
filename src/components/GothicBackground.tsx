@@ -4,30 +4,28 @@
  */
 
 import React from 'react';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 
 interface GothicBackgroundProps {
   children: React.ReactNode;
   opacity?: number;
-  blur?: number;
 }
 
 export default function GothicBackground({ 
   children, 
-  opacity = 0.8,
-  blur = 1 
+  opacity = 0.5
 }: GothicBackgroundProps) {
   return (
     <View style={styles.container}>
-      <ImageBackground
+      <Image
         source={require('../../assets/gothic-clock.jpeg')}
-        style={styles.backgroundImage}
-        imageStyle={{ opacity }}
-        blurRadius={blur}
+        style={[styles.backgroundImage, { opacity }]}
         resizeMode="cover"
-      >
+        blurRadius={2}
+      />
+      <View style={styles.contentWrapper}>
         {children}
-      </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -35,10 +33,18 @@ export default function GothicBackground({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#0A1419',
   },
   backgroundImage: {
-    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: '100%',
     height: '100%',
+  },
+  contentWrapper: {
+    flex: 1,
   },
 });
