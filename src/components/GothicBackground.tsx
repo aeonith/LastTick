@@ -13,7 +13,7 @@ interface GothicBackgroundProps {
 
 export default function GothicBackground({ 
   children, 
-  opacity = 0.5
+  opacity = 0.85
 }: GothicBackgroundProps) {
   return (
     <View style={styles.container}>
@@ -21,7 +21,7 @@ export default function GothicBackground({
         source={require('../../assets/gothic-clock.jpeg')}
         style={[styles.backgroundImage, { opacity }]}
         resizeMode="cover"
-        blurRadius={2}
+        blurRadius={0}
       />
       <View style={styles.contentWrapper}>
         {children}
