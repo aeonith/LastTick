@@ -14,8 +14,8 @@ interface GothicBackgroundProps {
 
 export default function GothicBackground({ 
   children, 
-  opacity = 0.15,
-  blur = 8 
+  opacity = 0.4,
+  blur = 3 
 }: GothicBackgroundProps) {
   return (
     <View style={styles.container}>
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   backgroundImageStyle: {
-    opacity: 0.15,
+    opacity: 0.4,
   },
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(10, 20, 25, 0.7)',
+    backgroundColor: 'rgba(10, 20, 25, 0.3)',
   },
 });
