@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
     height: '100%',
-    transform: [{ scale: 1.3 }],
+    transform: [{ scale: 0.6 }],
   },
   contentWrapper: {
     flex: 1,
