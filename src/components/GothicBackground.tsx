@@ -18,7 +18,7 @@ export default function GothicBackground({
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/gothic-clock.jpeg')}
+        source={require('../../assets/IMG_3646.jpeg')}
         style={[styles.backgroundImage, { opacity }]}
         resizeMode="cover"
         blurRadius={0}
