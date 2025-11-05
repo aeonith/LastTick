@@ -14,20 +14,22 @@ interface GothicBackgroundProps {
 
 export default function GothicBackground({ 
   children, 
-  opacity = 0.4,
-  blur = 3 
+  opacity = 0.5,
+  blur = 2 
 }: GothicBackgroundProps) {
   return (
     <View style={styles.container}>
       <ImageBackground
         source={require('../../assets/gothic-clock.jpeg')}
         style={styles.backgroundImage}
-        imageStyle={[styles.backgroundImageStyle, { opacity }]}
+        imageStyle={{ opacity }}
         blurRadius={blur}
-      >
-        <View style={styles.overlay} />
-      </ImageBackground>
-      {children}
+        resizeMode="cover"
+      />
+      <View style={styles.overlay} />
+      <View style={styles.content}>
+        {children}
+      </View>
     </View>
   );
 }
@@ -38,14 +40,23 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: '100%',
     height: '100%',
   },
-  backgroundImageStyle: {
-    opacity: 0.4,
-  },
   overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(10, 20, 25, 0.4)',
+  },
+  content: {
     flex: 1,
-    backgroundColor: 'rgba(10, 20, 25, 0.3)',
+    zIndex: 1,
   },
 });
