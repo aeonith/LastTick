@@ -33,6 +33,7 @@ import {
 } from '../src/lib/storage';
 import { loadTheme } from '../src/lib/storage';
 import { getThemeColors } from '../src/lib/theme';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function HealthDashboard() {
   const router = useRouter();
@@ -120,15 +121,15 @@ export default function HealthDashboard() {
 
   if (loading) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <GothicBackground>
         <ActivityIndicator size="large" color={colors.primary} />
-      </View>
+      </GothicBackground>
     );
   }
 
   if (!healthEnabled) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <GothicBackground>
         <StatusBar style={theme === 'light' ? 'dark' : 'light'} />
         
         <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -172,12 +173,12 @@ export default function HealthDashboard() {
             </Text>
           </TouchableOpacity>
         </ScrollView>
-      </View>
+      </GothicBackground>
     );
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <GothicBackground>
       <StatusBar style={theme === 'light' ? 'dark' : 'light'} />
       
       <ScrollView
@@ -312,7 +313,7 @@ export default function HealthDashboard() {
           </Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </GothicBackground>
   );
 }
 

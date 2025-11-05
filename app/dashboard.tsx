@@ -23,7 +23,7 @@ import { getQuoteOfDay } from '../src/lib/quotes';
 import RingProgress from '../src/components/RingProgress';
 import QuoteCard from '../src/components/QuoteCard';
 import Disclaimer from '../src/components/Disclaimer';
-import AnimatedHourglass from '../src/components/AnimatedHourglass';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -98,23 +98,17 @@ export default function Dashboard() {
 
   if (!userData || !timeRemaining) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={{ color: colors.text }}>Loading...</Text>
-      </View>
+      <GothicBackground>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ color: colors.text, fontFamily: 'Georgia' }}>Loading...</Text>
+        </View>
+      </GothicBackground>
     );
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <ImageBackground
-        source={require('../assets/gothic-clock.jpeg')}
-        style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
-        blurRadius={8}
-      >
-        <View style={styles.overlay} />
-      </ImageBackground>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+    <GothicBackground>
+      <ScrollView contentContainerStyle={[styles.scrollContent, { backgroundColor: 'transparent' }]}>
         <Animated.View style={[styles.header, { opacity: fadeAnim }]}>
           <Text style={[styles.headerTitle, { color: colors.textSecondary }]}>
             Time Remaining
@@ -212,26 +206,11 @@ export default function Dashboard() {
           </Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </GothicBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  backgroundImage: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-  },
-  backgroundImageStyle: {
-    opacity: 0.15,
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: 'rgba(10, 20, 25, 0.7)',
-  },
   scrollContent: {
     padding: 20,
     paddingTop: 60,

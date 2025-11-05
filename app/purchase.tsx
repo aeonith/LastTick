@@ -20,6 +20,7 @@ import {
   SUPPORT_URL,
 } from '../src/lib/iap';
 import Button from '../src/components/Button';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function Purchase() {
   const router = useRouter();
@@ -92,7 +93,7 @@ export default function Purchase() {
 
   if (purchased) {
     return (
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <GothicBackground>
         <View style={styles.content}>
           <TouchableOpacity onPress={() => router.back()}>
             <Text style={[styles.backButton, { color: colors.accent }]}>← Back</Text>
@@ -109,12 +110,12 @@ export default function Purchase() {
             </Text>
           </View>
         </View>
-      </View>
+      </GothicBackground>
     );
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <GothicBackground>
       <View style={styles.content}>
         <TouchableOpacity onPress={() => router.back()}>
           <Text style={[styles.backButton, { color: colors.accent }]}>← Back</Text>
@@ -207,7 +208,7 @@ export default function Purchase() {
           </Text>
         </View>
       </View>
-    </View>
+    </GothicBackground>
   );
 }
 

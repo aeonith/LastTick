@@ -26,6 +26,7 @@ import { logout } from '../src/lib/auth';
 import { getThemeColors } from '../src/lib/theme';
 import { requestNotificationPermissions, scheduleDailyNotification, cancelAllNotifications } from '../src/lib/notifications';
 import Button from '../src/components/Button';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function Settings() {
   const router = useRouter();
@@ -138,7 +139,7 @@ export default function Settings() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <GothicBackground>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => router.back()}>
@@ -250,7 +251,7 @@ export default function Settings() {
           />
         </View>
       </ScrollView>
-    </View>
+    </GothicBackground>
   );
 }
 

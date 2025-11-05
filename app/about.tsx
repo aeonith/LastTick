@@ -3,6 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Linking } from 'r
 import { useRouter } from 'expo-router';
 import { loadTheme } from '../src/lib/storage';
 import { getThemeColors } from '../src/lib/theme';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function About() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function About() {
   }, []);
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <GothicBackground>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <TouchableOpacity onPress={() => router.back()}>
           <Text style={[styles.backButton, { color: colors.accent }]}>← Back</Text>
@@ -110,7 +111,7 @@ export default function About() {
           LastTick v1.0.0
         </Text>
       </ScrollView>
-    </View>
+    </GothicBackground>
   );
 }
 

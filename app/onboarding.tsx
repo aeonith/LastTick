@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  ImageBackground,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -15,6 +16,7 @@ import { getThemeColors } from '../src/lib/theme';
 import InputField from '../src/components/InputField';
 import Button from '../src/components/Button';
 import Disclaimer from '../src/components/Disclaimer';
+import GothicBackground from '../src/components/GothicBackground';
 
 export default function Onboarding() {
   const router = useRouter();
@@ -389,7 +391,7 @@ export default function Onboarding() {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <GothicBackground opacity={0.12} blur={10}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {steps[step]()}
       </ScrollView>
@@ -423,7 +425,7 @@ export default function Onboarding() {
           </View>
         </View>
       </View>
-    </View>
+    </GothicBackground>
   );
 }
 
@@ -442,10 +444,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 8,
+    fontFamily: 'Georgia',
+    letterSpacing: 1,
   },
   subtitle: {
     fontSize: 16,
     marginBottom: 24,
+    fontFamily: 'Georgia',
+    letterSpacing: 0.5,
   },
   body: {
     fontSize: 16,
